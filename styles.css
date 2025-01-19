@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; 
+    /* منع السكرول  */
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* استخدام كامل ارتفاع الشاشة */
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* محاذاة النص إلى الأسفل */
+    transition: background-image 1s ease; /* تأثير انتقال الصورة */
+}
+
+#movieTitle {
+    position: absolute;
+    top: 20px; /* وضع العنوان في الأعلى */
+    color: white;
+    font-size: 3em; /* حجم الخط */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* ظل النص */
+}
+
+.thumbnails {
+    position: absolute;
+    bottom: 20px;
+    left: 100%;
+    display: flex;
+    animation: scroll 40s linear infinite; /* حركة الشريط */
+    white-space: nowrap; /* منع التفاف النص */
+}
+
+.thumbnail {
+    margin-left: 20px; /* مسافة بين الصور */
+    color: white;
+    font-size: 1em; /* حجم الخط */
+}
+
+.thumbnail img {
+    width: 300px; /* عرض كل صورة */
+    border-radius: 5px;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
